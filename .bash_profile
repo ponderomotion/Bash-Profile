@@ -2,8 +2,8 @@
 PS1="\\[$(tput setaf 1)\\]\\u\\[$(tput sgr0)\\]@\\h\\[$(tput setaf 7)\\]:\\w\\[\
 $(tput sgr0)\\]> "  
 
-# make grep output pretty
-alias grep='grep -v grep | grep --color=auto'
+# make grep output pretty and show line numbers
+alias grep='grep --color=auto -n'
 
 # Mac specific stuff
 alias ls='ls -G'
