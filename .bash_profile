@@ -6,7 +6,7 @@ $(tput sgr0)\\]> "
 alias grep='grep -v grep | grep --color=auto'
 
 # Mac specific stuff
-alias ls=ls -G
+alias ls='ls -G'
 export LSCOLORS=dxfxcxdxbxegedabagacad
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
