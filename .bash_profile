@@ -5,8 +5,13 @@ $(tput sgr0)\\]> "
 # make grep output pretty and show line numbers
 alias grep='grep --color=auto -n'
 
+# aliases
+alias l='ls -G'
+
 # Mac specific stuff
-alias ls='ls -G'
 export LSCOLORS=dxfxcxdxbxegedabagacad
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+alias ls='ls -G'
+
+
 
