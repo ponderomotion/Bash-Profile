@@ -8,10 +8,10 @@ platfrm=`uname`
 
 if [[ "$platfrm" == 'Darwin' ]]; then
   alias ls='ls -G'
-	export LSCOLORS=dxfxcxdxbxegedabagacad
-	export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-	alias gfortran='/opt/local/bin/gfortran-mp-4.4'
-	export FC=gfortran
+  export LSCOLORS=dxfxcxdxbxegedabagacad
+  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  alias gfortran='/opt/local/bin/gfortran-mp-4.4'
+  export FC=gfortran
 fi
 
 # Cuda Stuff
@@ -68,7 +68,7 @@ prompt () {
     custom)
         export PS1="\\[$(tput setaf 1)\\]\\u\\[$(tput sgr0)\\]@\\h\\[$(tput setaf 7)\\]:\\w\\[\
 $(tput sgr0)\\]> "
-		;;
+	;;
     esac
 }
 
