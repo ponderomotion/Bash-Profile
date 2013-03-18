@@ -1,4 +1,4 @@
-# Dan's Bashrc V1.1   
+# Dan's Bashrc V1.2   
 
 # make grep output pretty and show line numbers
 alias grep='grep --color=auto -n'
@@ -10,14 +10,32 @@ if [[ "$platfrm" == 'Darwin' ]]; then
   alias ls='ls -G'
   export LSCOLORS=dxfxcxdxbxegedabagacad
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-  alias gfortran='/opt/local/bin/gfortran-mp-4.4'
+  #alias gfortran='/opt/local/bin/gfortran-mp-4.4'
   export FC=gfortran
-  unset DYLD_LIBRARY_PATH # get rid of annoying mountain lion sudo message
 fi
 
 # Cuda Stuff
 export PATH=/usr/local/cuda/bin:$PATH  
 export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH 
+
+# workaround for annoying mountain lion sudo messages
+thesudo()
+{
+    # back up the DYLD_* variables
+    local BACK=$DYLD_LIBRARY_PATH
+
+    # unset DYLD_*
+    unset DYLD_LIBRARY_PATH
+
+    # calling sudo
+    /usr/bin/sudo "$@"
+
+    # restore DYLD_* after sudo finished
+    export DYLD_LIBRARY_PATH=$BACK
+}
+
+# redirect sudo
+alias sudo=thesudo
 
 # Easy extract
 extract () {
