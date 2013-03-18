@@ -12,6 +12,7 @@ if [[ "$platfrm" == 'Darwin' ]]; then
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
   alias gfortran='/opt/local/bin/gfortran-mp-4.4'
   export FC=gfortran
+  unset DYLD_LIBRARY_PATH # get rid of annoying mountain lion sudo message
 fi
 
 # Cuda Stuff
